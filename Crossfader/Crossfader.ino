@@ -20,7 +20,7 @@
  *  110.
  *  (example Max/MSP code below)
  *  
- *  last update on 13/9/2019
+ *  last update on 6/5/2022
  */
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -76,6 +76,11 @@ Adafruit_ADS1115 ads;
 
 // variable to store sensor reading
 int16_t adc0;
+
+// flash LED on startup for troubleshooting purposes
+digitalWrite(led, HIGH);
+delay(500);
+digitalWrite(led, LOW);
 
 // initialize sensor reading
 ResponsiveAnalogRead analog(0, true);
