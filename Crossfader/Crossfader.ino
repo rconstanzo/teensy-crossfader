@@ -77,11 +77,6 @@ Adafruit_ADS1115 ads;
 // variable to store sensor reading
 int16_t adc0;
 
-// flash LED on startup for troubleshooting purposes
-digitalWrite(led, HIGH);
-delay(500);
-digitalWrite(led, LOW);
-
 // initialize sensor reading
 ResponsiveAnalogRead analog(0, true);
 
@@ -90,7 +85,6 @@ ResponsiveAnalogRead analog(0, true);
 
 void setup(void) 
 {
-
   // Serial.begin(9600);
 
   // look for program change messages (for calibration routine)
@@ -120,6 +114,11 @@ void setup(void)
 
   // set smoothing resolution
   analog.setAnalogResolution(sensor_range);
+
+  // flash LED on startup for troubleshooting purposes
+digitalWrite(led, HIGH);
+delay(500);
+digitalWrite(led, LOW);
 
   // reset sketch to initial state
   // EEPROM.write(10,255);
